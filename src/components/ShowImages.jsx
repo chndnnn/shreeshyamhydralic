@@ -12,9 +12,9 @@ import IMG10 from './../assets/IMG8.jpg'
 
 const ShowImages = ()=>{
     let images = [IMG1,IMG2,IMG3,IMG4,IMG5,IMG6,IMG7,IMG8,IMG9,IMG10]
-    return <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+    return <div className='grid grid-cols-2 md:grid-cols-4  gap-4'>
         {images.map((ele)=>{
-           return <div className='md:h-[200px]'>
+           return <div className='md:h-[200px] rounded overflow-hidden shadow-lg shadow-black/60'>
            <img src={ele} alt="" className='object-cover w-full h-full' />
          </div>
         })}

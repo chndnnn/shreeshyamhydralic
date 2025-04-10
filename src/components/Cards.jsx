@@ -1,3 +1,5 @@
+import owner from './../assets/owner.jpg'
+
 const Cards = ({name})=>{
   const currentDate = new Date();
   
@@ -5,19 +7,19 @@ const Cards = ({name})=>{
   const formattedDate = `${currentDate.getDate().toString().padStart(2, '0')}/${(currentDate.getMonth() + 1).toString().padStart(2, '0')}/${currentDate.getFullYear()}`;
 
     return (
-        <a href="#" className="block rounded-md border  border-gray-300 p-4 shadow-sm sm:p-6">
+        <a href="#" className="block rounded-md border  border-gray-300 p-4 shadow-lg shadow-black/20 sm:p-6">
         <div className="sm:flex sm:justify-between sm:gap-4 lg:gap-6">
-          <div className="sm:order-last sm:shrink-0">
+          <div className="sm:order-last sm:shrink-0 ">
             <img
               alt=""
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
-              className="size-16 rounded-full object-cover sm:size-[72px]"
+              src={owner}
+              className="size-16 rounded-full object-cover  shadow-lg shadow-black/50 sm:size-[72px]"
             />
           </div>
       
           <div className="mt-4 sm:mt-0">
             <h3 className="text-lg font-medium text-pretty text-gray-900">
-            Hi, I'm Prince,I have years of experience in hydraulic and pneumatic systems, I am dedicated to delivering reliable and efficient solutions for all your equipment needs. 
+            Hi, I'm <span className='text-red-300 text-xl'>ALOK</span>,I have years of experience in hydraulic and pneumatic systems, I am dedicated to delivering reliable and efficient solutions for all your equipment needs. 
             </h3>
       
       

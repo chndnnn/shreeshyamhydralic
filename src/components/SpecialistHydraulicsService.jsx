@@ -1,12 +1,30 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const cardVariants = {
+  offscreen: {
+    opacity: 0,
+    y: 70,
+  },
+  onscreen: {
+    opacity: 1,
+    y: 0,
+    backgroundColor: "#f0f4ff", // subtle light blue-ish background
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.9,
+    },
+  },
+};
 
 const SpecialistHydraulicsService = () => {
   return (
     <div className="bg-gradient-to-r from-indigo-600 to-blue-400 min-h-screen rounded-md text-white">
       <div className="container mx-auto px-6 py-12">
+
         {/* Hero Section */}
         <section className="text-center mb-12">
-         
           <p className="text-xl mb-6">
             We are equipped to provide a complete solution for all your cylinders, jacks, pumps, and tooling needs.
             Offering industrial tools for sale and ensuring fast and timely service.
@@ -18,18 +36,32 @@ const SpecialistHydraulicsService = () => {
 
         {/* Services Section */}
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold text-indigo-600 mb-4">Cylinders & Jacks</h2>
-            <p>We offer professional repair, servicing, and sale of hydraulic cylinders and jacks, ensuring peak performance for your operations.</p>
-          </div>
-          <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold text-indigo-600 mb-4">Pumps & Tooling</h2>
-            <p>Our hydraulic pumps and tooling services are designed for all industrial needs, offering quick repair and sale of high-quality equipment.</p>
-          </div>
-          <div className="bg-white text-gray-800 rounded-lg shadow-lg p-6">
-            <h2 className="text-2xl font-semibold text-indigo-600 mb-4">Air Compressors</h2>
-            <p>24/7 Air compressor services with air dryers and industrial air compressors. Available for immediate repairs and maintenance services.</p>
-          </div>
+          {[
+            {
+              title: "Cylinders & Jacks",
+              desc: "We offer professional repair, servicing, and sale of hydraulic cylinders and jacks, ensuring peak performance for your operations.",
+            },
+            {
+              title: "Pumps & Tooling",
+              desc: "Our hydraulic pumps and tooling services are designed for all industrial needs, offering quick repair and sale of high-quality equipment.",
+            },
+            {
+              title: "Air Compressors",
+              desc: "24/7 Air compressor services with air dryers and industrial air compressors. Available for immediate repairs and maintenance services.",
+            },
+          ].map((card, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-white text-gray-800 rounded-lg shadow-lg p-6"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              variants={cardVariants}
+            >
+              <h2 className="text-2xl font-semibold text-indigo-600 mb-4">{card.title}</h2>
+              <p>{card.desc}</p>
+            </motion.div>
+          ))}
         </section>
 
         {/* 24-Hour Service */}

@@ -11,8 +11,8 @@ const Header = ({}) => {
           <div>
           <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900">
   <span class="text-2xl md:text-6xl font-extrabold text-green-600">S</span>
-  <span class="bg-gradient-to-r from-indigo-600 via-blue-500 to-teal-500 bg-clip-text text-transparent">
-  HREE SHYAM HYDRAULIC
+  <span class="bg-gradient-to-r from-indigo-600 via-blue-500 to-teal-500 bg-clip-text text-transparent font-sans">
+    HREE SHYAM HYDRAULIC
   </span>
 </h1>
 

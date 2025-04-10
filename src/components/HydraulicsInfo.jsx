@@ -2,7 +2,7 @@ import React from 'react';
 
 const HydraulicsInfo = () => {
   return (
-    <div className=" p-6">
+    <div className=" p-4">
       <h1 className="md:text-3xl text-2xl font-bold mb-6">Introduction to Hydraulics</h1>
       
       <section className="mb-8">
